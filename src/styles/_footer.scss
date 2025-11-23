@@ -1,0 +1,45 @@
+// src/styles/_footer.scss
+@use "globals" as *; // Importa variables y mixins
+
+.footer-section {
+    background-color: #1b0d0d;
+    padding: 56px 0;
+
+    @include respond-to("small") {
+        padding: 40px 0;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1185px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @include respond-to("small") {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    .footer-social {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .social-text {
+        font-size: 48px;
+        line-height: 1;
+        letter-spacing: 2.88px;
+        color: $text-light;
+        @include text-shadow; // Usando mixin
+    }
+
+    .footer-logo-wrapper {
+        background-color: $promo-bg-color; // Usando variable
+        padding: 9px 14px;
+        @include flex-center; // Usando mixin
+    }
+}

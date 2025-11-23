@@ -1,4 +1,11 @@
-@use "globals" as *;
+// src/styles/main.scss
+@use "globals" as *; 
 @use "layout";
-@use "header";
+
+// Estilos de componentes globales
+@use "header"; 
 @use "footer";
+
+// Estilos de las páginas específicas (Landing y Formulario)
+@use "landing";
+@use "formulario";

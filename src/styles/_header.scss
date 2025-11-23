@@ -1,0 +1,64 @@
+// src/styles/_header.scss
+@use "globals" as *; // Importa variables y mixins
+
+.header-section {
+    position: relative;
+    height: 142px;
+
+    @include respond-to("small") { // Media query para Móvil
+        height: auto;
+        min-height: 100px;
+    }
+
+    .header-background-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .header-background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 120px;
+
+        @include respond-to("medium") { // Media query para Tablet
+            padding: 0 60px;
+        }
+
+        @include respond-to("small") {
+            padding: 20px;
+            flex-direction: column;
+            gap: $base-spacing;
+        }
+    }
+
+    .header-link, .header-promo {
+        font-size: 48px;
+        line-height: 1;
+        letter-spacing: 2.88px;
+        color: $text-light;
+        
+        @include respond-to("medium") {
+            font-size: 36px;
+        }
+
+        @include respond-to("small") {
+            font-size: 32px;
+        }
+    }
+
+    .header-link {
+        @include text-shadow; // Usando mixin
+    }
+}

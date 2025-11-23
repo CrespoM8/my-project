@@ -1,2 +1,32 @@
-@use "globals" as *; // Importa todo desde globals
+// src/styles/_layout.scss
+@use "globals" as *; // Importa variables y mixins
 
+html {
+    box-sizing: border-box; 
+    // Usar la tipografía principal del formulario como base
+    font-family: $font-form; 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page-container { // Contenedor global de ambas páginas (similar al que tenías)
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

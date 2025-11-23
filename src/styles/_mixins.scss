@@ -1,0 +1,39 @@
+// src/styles/_mixins.scss
+@use "sass:map";
+
+// 1. MAPA DE BREAKPOINTS (Requisito de la práctica)
+$breakpoints: (
+  "small": (max-width: 767px),
+  "medium": (min-width: 768px, max-width: 1024px),
+  "large": (min-width: 1025px), // Para estilos de escritorio grandes
+);
+
+// MIXIN para media queries (Requisito de la práctica)
+@mixin respond-to($breakpoint) {
+    $raw-query: map.get($breakpoints, $breakpoint);
+    
+    @if $raw-query {
+        $query: "";
+        @each $prop, $value in $raw-query {
+            $query: "#{$query} and (#{$prop}: #{$value})";
+        }
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'Breakpoint no encontrado: #{$breakpoint}.';
+    }
+}
+
+// 2. MIXIN para estilo reutilizable (Requisito de la práctica)
+@mixin text-shadow {
+    text-shadow: 0px 4px 4px $text-shadow;
+}
+
+// 3. MIXIN para textos gradientes (Landing)
+@mixin gradient-text($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
