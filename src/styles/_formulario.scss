@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Jomolhari', serif;
+  background-color: #848484;
+  color: #000000;
+}
+
+
+  .login-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .page-container {
+    max-width: 1440px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 82px 0 118px;
+  }
+
+  .logo-left {
+    width: 197px;
+    height: 134px;
+    object-fit: contain;
+  }
+
+  .logo-right {
+    width: 197px;
+    height: 196px;
+    object-fit: contain;
+  }
+
+  .login-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 368px;
+  }
+
+  .login-title {
+    font-family: 'Jomolhari', serif;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #000000;
+    max-width: 615px;
+    margin: 0;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 73px; /* 581px (form top) - (368px (title top) + 140px (title height)) */
+  }
+
+  .form-card {
+    background-color: #bababa;
+    border-radius: 45px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 822px;
+    padding: 38px 55px 65px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group:first-of-type {
+    margin-bottom: 38px; /* 868px (label 2 top) - (698px (input 1 top) + 132px (input 1 height)) */
+  }
+
+  .form-group label {
+    display: block;
+    color: #6a6262;
+    font-family: 'Jomolhari', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.67;
+    letter-spacing: 2.16px;
+    margin-bottom: 32px; /* 698px (input 1 top) - (619px (label 1 top) + 47px (label 1 height)) */
+  }
+
+  .form-group input {
+    width: 100%;
+    height: 132px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0;
+    padding: 0 20px;
+    font-size: 24px; /* A reasonable default */
+    font-family: 'Jomolhari', serif;
+  }
+
+  .submit-button {
+    background-color: #d9d9d9;
+    border-radius: 171px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    width: 406px;
+    height: 107px;
+    border: none;
+    cursor: pointer;
+    color: #6a6262;
+    font-family: 'Jomolhari', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.67;
+    text-align: center;
+    margin-top: 56px; /* 1207px (button top) - (581px (card top) + 570px (card height)) */
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .login-header {
+      padding: 20px 40px 0;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .form-card {
+      width: 90%;
+    }
+    .login-main {
+      margin-top: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login-header {
+      position: static;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .login-main {
+      margin-top: 40px;
+    }
+    .login-title {
+      font-size: 36px;
+      max-width: 90%;
+    }
+    .login-form {
+      margin-top: 40px;
+    }
+    .form-card {
+      padding: 25px;
+    }
+    .form-group label {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .form-group input {
+      height: 80px;
+    }
+    .submit-button {
+      width: 80%;
+      max-width: 350px;
+      height: 80px;
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-title {
+      font-size: 28px;
+    }
+    .form-group label {
+      font-size: 22px;
+    }
+    .form-group input {
+      height: 60px;
+    }
+    .submit-button {
+      height: 70px;
+      font-size: 24px;
+    }
+  }

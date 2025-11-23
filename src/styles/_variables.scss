@@ -1,0 +1,23 @@
+// src/styles/_variables.scss
+
+// Colores de landing
+$horror-dark-bg: #0a0907;
+$horror-light-bg: #4b2c26;
+$text-light: #ffffff;
+$text-shadow: rgba(0, 0, 0, 0.6);
+$promo-bg-color: #a44040; // Fondo del logo en el footer
+
+// Colores de formulario
+$form-bg: #848484;
+$form-card-bg: #bababa;
+$form-label-color: #6a6262;
+$form-input-bg: #d9d9d9;
+$text-dark: #000000;
+
+// Tipografías
+$font-landing-primary: 'Jomhuria', cursive;
+$font-landing-secondary: 'Jolly Lodger', cursive;
+$font-form: 'Jomolhari', serif;
+
+// Espaciado base (para usar en cálculos)
+$base-spacing: 10px;
