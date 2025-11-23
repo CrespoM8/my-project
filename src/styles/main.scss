@@ -2,10 +2,10 @@
 @use "globals" as *; 
 @use "layout";
 
-// Estilos de componentes globales
-@use "header"; 
-@use "footer";
+// Componentes modulares
+@use "header"; // Con el código del header
+@use "footer"; // Con el código del footer
 
-// Estilos de las páginas específicas (Landing y Formulario)
-@use "landing";
+// Páginas específicas
+@use "landing"; // Con el código de hero y content
 @use "formulario";
