@@ -1,21 +1,26 @@
 // src/styles/_mixins.scss
+@use "variables" as *;
 @use "sass:map";
 
 // 1. MAPA DE BREAKPOINTS (Requisito de la práctica)
 $breakpoints: (
   "small": (max-width: 767px),
   "medium": (min-width: 768px, max-width: 1024px),
-  "large": (min-width: 1025px), // Para estilos de escritorio grandes
+  "large": (min-width: 1025px),
 );
 
-// MIXIN para media queries (Requisito de la práctica)
+// MIXIN para media queries
 @mixin respond-to($breakpoint) {
     $raw-query: map.get($breakpoints, $breakpoint);
     
     @if $raw-query {
         $query: "";
         @each $prop, $value in $raw-query {
-            $query: "#{$query} and (#{$prop}: #{$value})";
+            @if $query == "" {
+                $query: "(#{$prop}: #{$value})";
+            } @else {
+                $query: "#{$query} and (#{$prop}: #{$value})";
+            }
         }
         @media #{$query} {
             @content;
@@ -25,15 +30,22 @@ $breakpoints: (
     }
 }
 
-// 2. MIXIN para estilo reutilizable (Requisito de la práctica)
+// 2. MIXIN para estilo reutilizable
 @mixin text-shadow {
-    text-shadow: 0px 4px 4px $text-shadow;
+    text-shadow: 0px 4px 4px $text-shadow; // ✅ Ahora sí tiene acceso a $text-shadow
 }
 
-// 3. MIXIN para textos gradientes (Landing)
+// 3. MIXIN para textos gradientes
 @mixin gradient-text($gradient) {
     background: $gradient;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+// MIXIN para centrar elementos con Flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
